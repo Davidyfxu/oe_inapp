@@ -1,0 +1,33 @@
+.container {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  place-items: center;
+  min-width: 700px;
+  min-height: 100vh;
+  .header {
+    width: 50%;
+    min-width: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .title {
+      line-height: 0.9;
+      font-size: 185px;
+      font-weight: 600;
+    }
+    .subTitle {
+      line-height: 0.9;
+      font-size: 200px;
+      font-weight: 100;
+    }
+  }
+
+  .form {
+    min-width: 620px;
+    width: 620px;
+    padding: 24px;
+    background-color: #ffffff;
+    min-height: 100vh;
+  }
+}
