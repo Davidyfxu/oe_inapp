@@ -1,55 +1,91 @@
 import styles from "./index.module.scss";
 import {
   Button,
-  Cascader,
   DatePicker,
   Divider,
   Form,
   Input,
   InputNumber,
+  List,
   message,
+  notification,
   Radio,
   Select,
-  Slider,
   Space,
   Spin,
-  Switch,
-  TreeSelect,
+  Typography,
   Upload,
 } from "antd";
-import React, { useState } from "react";
-import { DeleteFilled, PlusOutlined } from "@ant-design/icons";
+import React, { useRef, useState } from "react";
+import { DeleteFilled, PlusOutlined, UploadOutlined } from "@ant-design/icons";
 import {
   DegreeEnumOptions,
   MarryOptions,
   SexOptions,
-  VisaRejectEnum,
   VisaRejectOptions,
 } from "./utils";
 import axios from "axios";
-
+import { IAUCase, VisaRejectEnum } from "./types";
+import { Dayjs } from "dayjs";
+const { Paragraph, Link } = Typography;
 const { RangePicker } = DatePicker;
-const { TextArea } = Input;
-
 const App = () => {
   const [loading, setLoading] = useState(false);
-  const onFinish = async (values: any) => {
+  const [api, contextHolder] = notification.useNotification();
+  const [attachments, setAttachments] = useState<string[]>([]);
+  const [uploading, setUploading] = useState(false);
+  const ref = useRef({});
+  const openNotification = async (id: string) => {
+    api.info({
+      duration: 60,
+      message: `创建成功`,
+      description: (
+        <>
+          请保存生成id号，便于后期查询
+          <Paragraph type="danger" copyable={{ tooltips: "copy" }}>
+            {id}
+          </Paragraph>
+        </>
+      ),
+      placement: "top",
+    });
+  };
+
+  const onFinish = async (values: IAUCase) => {
     try {
       setLoading(true);
-      const result = await axios.post(
-        "https://4gvna555zi.hk.aircode.run/createAUCase",
-        values,
+      const params = {
+        ...values,
+        birth: values["birth"].unix(),
+        period: values["period"].map((t: Dayjs) => t.unix()),
+        colleges: values["colleges"].map((c) => ({
+          ...c,
+          entryMonth: c["entryMonth"].unix(),
+        })),
+        attachments: attachments,
+      };
+      console.log(params);
+      const { data } = await axios.post(
+        "https://psqrszkvx9.us.aircode.run/createAUCase",
+        params,
       );
-      console.log("Success:", values);
-      message.success("创建成功");
+      await openNotification(data?.Student?._id || "");
     } catch (error) {
       console.error("Something wrong:", error.message);
     } finally {
       setLoading(false);
     }
   };
+
+  const normFile = (e: any) => {
+    if (Array.isArray(e)) {
+      return e;
+    }
+    return e?.fileList;
+  };
   return (
     <div className={styles.container}>
+      {contextHolder}
       <div className={styles.header}>
         <div>
           <div className={styles.title}>Offer</div>
@@ -58,7 +94,12 @@ const App = () => {
         </div>
       </div>
       <Spin spinning={loading}>
-        <Form className={styles.form} layout="horizontal" onFinish={onFinish}>
+        <Form
+          className={styles.form}
+          ref={ref}
+          layout="horizontal"
+          onFinish={onFinish}
+        >
           <Divider>学生信息</Divider>
           <Space className={styles.formLine} align="baseline">
             <Form.Item
@@ -133,7 +174,6 @@ const App = () => {
           >
             <Input placeholder="请输入地址" allowClear />
           </Form.Item>
-
           <Divider>教育经历</Divider>
           <Space className={styles.formLine} align="baseline">
             <Form.Item
@@ -187,7 +227,6 @@ const App = () => {
               <Radio.Group options={VisaRejectOptions} />
             </Form.Item>
           </Space>
-
           <Divider>项目选择</Divider>
           <Form.List name="colleges" initialValue={[{ college: "" }]}>
             {(fields, { add, remove }) => (
@@ -265,7 +304,66 @@ const App = () => {
               </>
             )}
           </Form.List>
-
+          <Divider>附件上传</Divider>
+          <div>
+            <div>
+              所有附件需英文命名，中文命名会上传失效。必须：毕业证/在读证明、成绩单(含证明)、材料真实性申明
+            </div>
+            <div></div>
+            <Link
+              href="https://bzk2gf.us.aircodecdn.com/confirm.1692410893659_a89tlzslnga.docx"
+              target="_blank"
+            >
+              材料真实性申明(点击下载)
+            </Link>
+          </div>
+          <Space>
+            文件上传：
+            <Upload
+              accept={".pdf"}
+              headers={{
+                authorization: "authorization-text",
+              }}
+              showUploadList={false}
+              beforeUpload={async (file) => {
+                try {
+                  setUploading(true);
+                  const formData = new FormData();
+                  formData.append("myFile", file);
+                  const { data } = await axios.post(
+                    "https://psqrszkvx9.us.aircode.run/uploadFile",
+                    formData,
+                  );
+                  setAttachments((a) => [...a, data?.url]);
+                  message.success(`附件上传成功`);
+                } catch (e) {
+                  console.error("customRequest", e);
+                  message.error(`附件上传失败`);
+                } finally {
+                  setUploading(false);
+                }
+              }}
+            >
+              <Button icon={<UploadOutlined />}>PDF, 单文件小于300KB</Button>
+            </Upload>
+            <Spin spinning={uploading} style={{ display: "flex", gap: 32 }}>
+              {attachments.map((a, idx) => (
+                <Space>
+                  <Link href={a} target="_blank">
+                    附件 {idx + 1}
+                  </Link>
+                  <Button
+                    onClick={() =>
+                      setAttachments((a) => a.filter((_, i) => i === idx))
+                    }
+                    type={"text"}
+                    danger
+                    icon={<DeleteFilled />}
+                  />
+                </Space>
+              ))}
+            </Spin>
+          </Space>
           <Divider>导师信息</Divider>
           <Space className={styles.formLine} align="baseline">
             <Form.Item name={"teacherName"} label="导师昵称">

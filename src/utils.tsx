@@ -1,22 +1,5 @@
-export enum SexEnum {
-  Female,
-  Male,
-}
-export enum MarryEnum {
-  Single,
-  Married,
-  Other,
-  Divorce,
-}
-export enum VisaRejectEnum {
-  No,
-  Yes,
-}
-export enum DegreeEnum {
-  Bachelor,
-  Master,
-  PHD,
-}
+import { DegreeEnum, MarryEnum, SexEnum, VisaRejectEnum } from "./types";
+
 export const SexOptions = [
   { value: SexEnum.Male, label: "男" },
   { value: SexEnum.Female, label: "女" },
