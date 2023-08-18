@@ -3,7 +3,6 @@
   padding: 0;
   display: flex;
   place-items: center;
-  min-width: 700px;
   min-height: 100vh;
   .header {
     width: 50%;
@@ -24,10 +23,15 @@
   }
 
   .form {
-    min-width: 620px;
-    width: 620px;
-    padding: 24px;
+    min-width: 650px;
+    max-width: 800px;
+    padding: 16px;
     background-color: #ffffff;
     min-height: 100vh;
+    .formLine {
+      display: flex;
+      justify-content: space-between;
+      align-items: self-start;
+    }
   }
 }
