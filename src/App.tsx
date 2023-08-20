@@ -311,7 +311,7 @@ const App = () => {
             </div>
             <div></div>
             <Link
-              href="https://bzk2gf.us.aircodecdn.com/confirm.1692410893659_a89tlzslnga.docx"
+              href="https://bzk2gf.us.aircodecdn.com/confirm.1692519336426_5bvd0d5lhzf.docx"
               target="_blank"
             >
               材料真实性申明(点击下载)
