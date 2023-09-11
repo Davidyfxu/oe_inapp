@@ -27,7 +27,7 @@ import {
 import axios from "axios";
 import { IAUCase, VisaRejectEnum } from "./types";
 import { Dayjs } from "dayjs";
-const { Paragraph, Link } = Typography;
+const { Paragraph, Link, Text } = Typography;
 const { RangePicker } = DatePicker;
 const App = () => {
   const [loading, setLoading] = useState(false);
@@ -305,6 +305,9 @@ const App = () => {
             )}
           </Form.List>
           <Divider>附件上传</Divider>
+          <Text type={"danger"} strong>
+            文件上传功能偶尔失效，附件材料可直接私发蘑菇或凡澳
+          </Text>
           <div>
             <div>
               所有附件需英文命名，中文命名会上传失效。必须：毕业证/在读证明、成绩单(含证明)、材料真实性申明
@@ -318,7 +321,7 @@ const App = () => {
             </Link>
           </div>
           <Space>
-            文件上传：
+            文件上传：(非必传)
             <Upload
               accept={".pdf"}
               headers={{
