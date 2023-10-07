@@ -64,9 +64,8 @@ const App = () => {
         })),
         attachments: attachments,
       };
-      console.log(params);
       const { data } = await axios.post(
-        "https://psqrszkvx9.us.aircode.run/createAUCase",
+        "https://psqrszkvx9.us.aircode.run/AU/create",
         params,
       );
       await openNotification(data?.Student?._id || "");
