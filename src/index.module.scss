@@ -5,8 +5,7 @@
   place-items: center;
   min-height: 100vh;
   .header {
-    width: 50%;
-    min-width: 200px;
+    min-width: 100px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -19,6 +18,11 @@
       line-height: 0.9;
       font-size: 200px;
       font-weight: 100;
+    }
+  }
+  @media (min-width: 900px) {
+    .header {
+      width: 50%;
     }
   }
 

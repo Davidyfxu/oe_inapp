@@ -1,6 +1,7 @@
 import { Dayjs } from "dayjs";
 
 export interface IAUCase {
+  _id?: string;
   lastName: string;
   firstName: string;
   sex: SexEnum;

@@ -6,7 +6,6 @@ import {
   Form,
   Input,
   InputNumber,
-  List,
   message,
   notification,
   Radio,
@@ -16,40 +15,31 @@ import {
   Typography,
   Upload,
 } from "antd";
-import React, { useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { DeleteFilled, PlusOutlined, UploadOutlined } from "@ant-design/icons";
 import {
   DegreeEnumOptions,
+  filterCase,
   MarryOptions,
+  openNotification,
   SexOptions,
   VisaRejectOptions,
 } from "./utils";
+import { useSearchParams } from "react-router-dom";
 import axios from "axios";
 import { IAUCase, VisaRejectEnum } from "./types";
 import { Dayjs } from "dayjs";
+import { create_au_case, get_au_case } from "./api";
 const { Paragraph, Link, Text } = Typography;
 const { RangePicker } = DatePicker;
 const App = () => {
+  const [searchParams, _] = useSearchParams();
+  const _id = searchParams.get("_id");
   const [loading, setLoading] = useState(false);
   const [api, contextHolder] = notification.useNotification();
   const [attachments, setAttachments] = useState<string[]>([]);
   const [uploading, setUploading] = useState(false);
-  const ref = useRef({});
-  const openNotification = async (id: string) => {
-    api.info({
-      duration: 60,
-      message: `创建成功`,
-      description: (
-        <>
-          请保存生成id号，便于后期查询
-          <Paragraph type="danger" copyable={{ tooltips: "copy" }}>
-            {id}
-          </Paragraph>
-        </>
-      ),
-      placement: "top",
-    });
-  };
+  const [form] = Form.useForm();
 
   const onFinish = async (values: IAUCase) => {
     try {
@@ -64,11 +54,9 @@ const App = () => {
         })),
         attachments: attachments,
       };
-      const { data } = await axios.post(
-        "https://psqrszkvx9.us.aircode.run/AU/create",
-        params,
-      );
-      await openNotification(data?.Student?._id || "");
+      _id && (params._id = _id);
+      const { data } = await create_au_case(params);
+      await openNotification(api, data?.Student?._id || "");
     } catch (error) {
       console.error("Something wrong:", error.message);
     } finally {
@@ -76,12 +64,24 @@ const App = () => {
     }
   };
 
-  const normFile = (e: any) => {
-    if (Array.isArray(e)) {
-      return e;
+  const setFormInitData = async (_id: string) => {
+    try {
+      setLoading(true);
+      const { data } = await get_au_case({ _id });
+      form.setFieldsValue(filterCase(data));
+    } catch (e) {
+      console.error(e);
+    } finally {
+      setLoading(false);
     }
-    return e?.fileList;
   };
+
+  useEffect(() => {
+    if (_id) {
+      void setFormInitData(_id);
+    }
+  }, []);
+
   return (
     <div className={styles.container}>
       {contextHolder}
@@ -95,9 +95,9 @@ const App = () => {
       <Spin spinning={loading}>
         <Form
           className={styles.form}
-          ref={ref}
           layout="horizontal"
           onFinish={onFinish}
+          form={form}
         >
           <Divider>学生信息</Divider>
           <Space className={styles.formLine} align="baseline">
