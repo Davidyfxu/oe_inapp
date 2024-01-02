@@ -7,7 +7,7 @@ import React from "react";
 import { NotificationInstance } from "antd/es/notification/interface";
 const { Paragraph } = Typography;
 
-const BASE_URL = "https://psqrszkvx9.us.aircode.run";
+const BASE_URL = "https://cpvg7c.laf.dev";
 export const post = async (url: string, params: any): Promise<any> => {
   try {
     return await axios.post(BASE_URL + url, { ...params });
