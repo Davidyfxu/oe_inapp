@@ -5,7 +5,7 @@ import Apply from "./pages/Apply";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
-import Navbar from "./components/Navbar";
+import Navbar from "./components/Navbar/index";
 const App = () => {
   const isShowNav = !window.location.pathname.includes("apply");
   return (

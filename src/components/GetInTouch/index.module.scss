@@ -1,0 +1,23 @@
+.getInTouchContainer {
+    padding-top: 10rem;
+    padding-bottom: 10rem;
+    margin-left: 6rem;
+    margin-right: 6rem;
+  }
+  
+.getInTouchButton {
+    font-size: 0.9rem;
+    text-transform: capitalize;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    padding-left: 4rem;
+    padding-right: 4rem;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+    border-radius: 0;
+    background-color: #14192d;
+  
+    &:hover {
+      background-color: #1e2a5a;
+    }
+  }

@@ -1,0 +1,50 @@
+.contentContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding-top: 80px; 
+    padding-bottom: 80px; 
+    padding-left: 16px; 
+    padding-right: 16px;
+  }
+  
+.commonCard {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  
+.borderCard {
+    @extend .commonCard;
+    min-height: 200px;
+    border: 1px solid #ccc;
+  }
+  
+.shadowlessCard {
+    @extend .commonCard;
+    min-height: 180px;
+    box-shadow: none;
+  }
+  
+.cardArrow {
+    box-shadow: none;
+    min-height: 180px;
+  
+    @media (max-width: 600px) {
+      display: none;
+    }
+  }
+  
+.typographyH6 {
+    font-weight: 400;
+    padding-top: 8px; 
+  }
+  
+.typographyH5 {
+    font-weight: 700;
+    text-transform: capitalize;
+  }
+  

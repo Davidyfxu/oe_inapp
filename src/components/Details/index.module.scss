@@ -1,0 +1,26 @@
+.container {
+    padding-top: 10rem;
+    padding-bottom: 10rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+  
+  .form {
+    margin-top: 1rem;
+    padding-top: 2rem;
+  }
+  
+  .button {
+    font-size: 0.9rem;
+    text-transform: capitalize;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+    border-radius: 0;
+    background-color: #14192d;
+    
+    &:hover {
+      background-color: #1e2a5a;
+    }
+  }
