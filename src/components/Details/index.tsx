@@ -1,10 +1,12 @@
 import React from "react";
 import { Box, Button, FormControl, Stack, TextField } from "@mui/material";
-import Title from "./Title.jsx";
-import Paragraph from "./Paragraph.jsx";
+import Title from "../Title/index";
+import Paragraph from "../Paragraph/index";
+import styles from './index.module.scss';
+import { ClassNames } from "@emotion/react";
 
-const Details = () => {
-  const handleSubmit = (event) => {
+const Details: React.FC = () => {
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     // if (email === "") {
     //   alert("请输入邮箱");
@@ -25,10 +27,7 @@ const Details = () => {
       direction="column"
       justifyContent="center"
       alignItems="center"
-      sx={{
-        py: 10,
-        px: 2,
-      }}
+      className={styles.container}
     >
       <Title text={"Interesting to buy property"} textAlign={"center"} />
       <Paragraph
@@ -45,10 +44,7 @@ const Details = () => {
         component="form"
         // noValidate
         onSubmit={handleSubmit}
-        sx={{
-          mt: 1,
-          py: 2,
-        }}
+        className={styles.form}
       >
         <FormControl fullWidth>
           <TextField
@@ -79,18 +75,7 @@ const Details = () => {
           fullWidth
           type="submit"
           size="medium"
-          sx={{
-            fontSize: "0.9rem",
-            textTransform: "capitalize",
-            py: 2,
-            mt: 3,
-            mb: 2,
-            borderRadius: 0,
-            backgroundColor: "#14192d",
-            "&:hover": {
-              backgroundColor: "#1e2a5a",
-            },
-          }}
+          className={styles.button}
         >
           send
         </Button>

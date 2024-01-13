@@ -1,0 +1,52 @@
+.footerTitle {
+    font-weight: 700;
+    text-transform: capitalize;
+    padding-bottom: 1; 
+  }
+
+.footerLink {
+    font-size: 0.9rem;
+    font-weight: 400;
+    text-decoration: none;
+    color: #414141;
+    text-transform: capitalize;
+    &:hover {
+      color: #1c2859;
+    }
+  }
+
+.boxRow {
+    display: flex;
+    flex-direction: row;
+    background-color: #ededed;
+    flex: 1;
+    
+    @media (max-width: 600px) {
+      flex-direction: column;
+      gap: 30;
+    }
+
+    &.padding {
+      padding-top: 2rem; 
+      padding-bottom: 2rem; 
+      padding-left: 1rem; 
+      padding-right: 1rem;
+      }
+  }
+  
+.stackColumn {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    flex: 1;
+    gap: 8;
+    text-align: center;
+  }
+  
+.iconLink {
+    color: #414141;
+    &:hover {
+      color: #1c2859;
+    }
+  }
+  
