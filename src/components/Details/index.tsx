@@ -3,6 +3,7 @@ import { Box, Button, FormControl, Stack, TextField } from "@mui/material";
 import Title from "../Title/index";
 import Paragraph from "../Paragraph/index";
 import styles from './index.module.scss';
+import { ClassNames } from "@emotion/react";
 
 const Details: React.FC = () => {
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
@@ -26,10 +27,7 @@ const Details: React.FC = () => {
       direction="column"
       justifyContent="center"
       alignItems="center"
-      sx={{
-        py: 10,
-        px: 2,
-      }}
+      className={styles.container}
     >
       <Title text={"Interesting to buy property"} textAlign={"center"} />
       <Paragraph

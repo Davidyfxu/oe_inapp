@@ -65,13 +65,14 @@ const GetStarted: React.FC = () => {
         sx={{
           order: { xs: 3, sm: 3, md: 4 },
         }}
+        className={styles.customGridItem}
       >
         <Box
           component="article"
           className={styles.articleBox}
         >
           <Title text={"Match with the best agent"} textAlign={"start"} />
-          <Typography>
+          <Typography  className={styles.customTypography}>
             Our verified partner Agents are local experts who
             <br />
             earn an average of 4.8/5 stars from buyers and sellers.

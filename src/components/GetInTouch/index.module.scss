@@ -1,21 +1,21 @@
 .getInTouchContainer {
-    padding-top: 10rem;
-    padding-bottom: 10rem;
-    margin-left: 6rem;
-    margin-right: 6rem;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    margin-left: 3rem;
+    margin-right: 3rem;
   }
   
 .getInTouchButton {
     font-size: 0.9rem;
-    text-transform: capitalize;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-    padding-left: 4rem;
-    padding-right: 4rem;
-    margin-top: 3rem;
-    margin-bottom: 2rem;
+    text-transform: capitalize !important;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
     border-radius: 0;
-    background-color: #14192d;
+    background-color: #14192d !important;
   
     &:hover {
       background-color: #1e2a5a;

@@ -3,10 +3,10 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    padding-top: 80px; 
-    padding-bottom: 80px; 
-    padding-left: 16px; 
-    padding-right: 16px;
+    padding-top: 5rem; 
+    padding-bottom: 5rem; 
+    padding-left: 1rem; 
+    padding-right: 1rem;
   }
   
 .commonCard {
@@ -31,20 +31,19 @@
   
 .cardArrow {
     box-shadow: none;
-    min-height: 180px;
-  
+    
     @media (max-width: 600px) {
-      display: none;
+      display: block;
     }
   }
   
 .typographyH6 {
     font-weight: 400;
-    padding-top: 8px; 
+    padding-top: 0.5rem; 
   }
   
 .typographyH5 {
-    font-weight: 700;
-    text-transform: capitalize;
+    font-weight: 700 !important;
+    text-transform: capitalize !important;
   }
   

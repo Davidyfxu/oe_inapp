@@ -102,15 +102,7 @@ const Content: React.FC = () => {
       <Grid item xs={12} sm={6} md={3}>
         <Card
           square={true}
-          sx={{
-            minHeight: 200,
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
-            alignItems: "center",
-            textAlign: "center",
-            border: "1px solid #ccc",
-          }}
+          className={styles.borderCard}
         >
           <CardContent>
             <IconButton>
@@ -119,10 +111,7 @@ const Content: React.FC = () => {
             <Typography
               variant="h5"
               component="p"
-              sx={{
-                fontWeight: 700,
-                textTransform: "capitalize",
-              }}
+              className={styles.typographyH5}
             >
               local dining
             </Typography>

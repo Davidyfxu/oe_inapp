@@ -28,7 +28,7 @@ const Header: React.FC = () => {
           quality products.
         </Typography>
 
-        <Box>
+        <Box className={styles.buttons_container}>
           <Button
             variant="contained"
             className={styles.buttonBuyNow}

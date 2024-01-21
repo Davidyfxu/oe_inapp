@@ -2,8 +2,8 @@
     min-height: 80vh;
     display: flex;
     justify-content: center;
-    gap: 16px; /* 替换为 theme.spacing(2) 的实际值 */
-    padding-top: 80px; /* 替换为 theme.spacing(10) 的实际值 */
+    gap: 1rem; 
+    padding-top: 5rem; 
     background-color: #409eff;
   
     @media (max-width: 960px) { /* md 断点的宽度 */
@@ -15,57 +15,61 @@
   
 .boxText {
     flex: 1;
-    padding-left: 64px; /* 替换为 theme.spacing(8) 的实际值 */
+    padding-left: 4rem; /* 替换为 theme.spacing(8) 的实际值 */
   
-    @media (max-width: 960px) { /* md 断点的宽度 */
+    @media (max-width: 899.95px) { /* md 断点的宽度 */
       flex: 2;
       text-align: center;
-      padding-left: 16px; /* 替换为 theme.spacing(2) 的实际值 */
-      padding-right: 16px; /* 替换为 theme.spacing(2) 的实际值 */
+      padding-left: 1rem; /* 替换为 theme.spacing(2) 的实际值 */
+      padding-right: 1rem; /* 替换为 theme.spacing(2) 的实际值 */
     }
   }
   
 .typographyH2 {
-    font-weight: 700;
+    font-weight: 700 !important;
     color: #fff;
   }
   
 .typographyP {
-    padding-top: 24px; /* 替换为 theme.spacing(3) 的实际值 */
-    padding-bottom: 24px; /* 替换为 theme.spacing(3) 的实际值 */
+    padding-top: 1.5rem; /* 替换为 theme.spacing(3) 的实际值 */
+    padding-bottom: 1.5rem; /* 替换为 theme.spacing(3) 的实际值 */
     line-height: 1.6;
     color: #fff;
   }
+
+.buttons_container {
+    display: flex;
   
-.buttonBuyNow {
-    margin-right: 8px; /* 替换为 theme.spacing(1) 的实际值 */
-    padding: 8px 32px; /* 替换为 theme.spacing(1, 4) 的实际值 */
-    font-size: 0.9rem;
-    text-transform: capitalize;
-    border-radius: 0;
-    border-color: #14192d;
-    color: #fff;
-    background-color: #14192d;
-  
-    &:hover, &:focus {
-      background-color: #343a55;
+    .buttonBuyNow {
+      margin-right: 1rem; /* 替换为 theme.spacing(1) 的实际值 */
+      padding: 0.5rem 2rem; /* 替换为 theme.spacing(1, 4) 的实际值 */
+      font-size: 0.9rem;
+      text-transform: capitalize !important;
+      border-radius: 0;
+      border-color: #14192d;
+      color: #fff;
+      background-color: #14192d !important;
+    
+      &:hover, &:focus {
+        background-color: #343a55;
+      }
     }
-  }
-  
-.buttonExplore {
-    padding: 8px 32px; /* 替换为 theme.spacing(1, 4) 的实际值 */
-    font-size: 0.9rem;
-    text-transform: capitalize;
-    border-radius: 0;
-    color: #fff;
-    background-color: transparent;
-    border-color: #fff;
-  
-    &:hover, &:focus {
-      color: #343a55;
-      border-color: #343a55;
+
+    .buttonExplore {
+      padding: 0.5rem 2rem; /* 替换为 theme.spacing(1, 4) 的实际值 */
+      font-size: 0.9rem;
+      text-transform: capitalize !important;
+      border-radius: 0;
+      color: #fff;
+      background-color: transparent !important;
+      border-color: #fff;
+    
+      &:hover, &:focus {
+        color: #343a55;
+        border-color: #343a55;
+      }
     }
-  }
+  } 
   
 .imgBox {
     @media (max-width: 960px) {

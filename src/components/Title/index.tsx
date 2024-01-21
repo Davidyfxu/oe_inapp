@@ -10,7 +10,7 @@ interface TitleProps {
 const Title: FC<TitleProps> = ({ text, textAlign }) => {
   return (
     <Typography
-      className={`${styles.title}`} 
+      className={styles.title} 
       style={{ textAlign: textAlign }}
       variant='h4'
       component='h3'
