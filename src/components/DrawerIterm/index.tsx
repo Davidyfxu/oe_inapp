@@ -19,19 +19,19 @@ import InfoIcon from "@mui/icons-material/Info";
 import MenuIcon from "@mui/icons-material/Menu";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
+import styles from './index.module.scss';
 
 const drawerWidth = 200;
 
-const DrawerHeader = styled("div")(({ theme }) => ({
-  display: "flex",
-  alignItems: "center",
-  padding: theme.spacing(0, 5),
-  ...theme.mixins.toolbar,
-  justifyContent: "flex-start",
-}));
 
 //rotas
-const itemList = [
+interface Item {
+  text: string;
+  icon: JSX.Element;
+  to: string;
+}
+
+const itemList: Item[] = [
   {
     text: "Home",
     icon: <HomeIcon />,
@@ -49,7 +49,7 @@ const itemList = [
   },
 ];
 
-const DrawerItem = () => {
+const DrawerItem: React.FC = () => {
   const theme = useTheme();
   const [open, setOpen] = useState(false);
   const handleDrawerOpen = () => {
@@ -68,24 +68,18 @@ const DrawerItem = () => {
         aria-label="open drawer"
         edge="end"
         onClick={handleDrawerOpen}
-        sx={{ ...(open && { display: "none" }) }}
+        className={open ? styles.hidden : ''}
       >
         <MenuIcon />
       </IconButton>
 
       <Drawer
-        sx={{
-          flexGrow: 1,
-          flexShrink: 0,
-          "& .MuiDrawer-paper": {
-            width: drawerWidth,
-          },
-        }}
+        className={styles.drawer}
         anchor="right"
         open={open}
         onClose={handleDrawerClose}
       >
-        <DrawerHeader>
+        <div className={styles.drawerHeader}>
           <IconButton onClick={handleDrawerClose}>
             {theme.direction === "rtl" ? (
               <ChevronLeftIcon />
@@ -93,7 +87,7 @@ const DrawerItem = () => {
               <ChevronRightIcon />
             )}
           </IconButton>
-        </DrawerHeader>
+        </div>
         <Divider />
         <List>
           {itemList.map((item) => {
@@ -103,22 +97,9 @@ const DrawerItem = () => {
                 key={text}
                 component={Link}
                 to={item.to}
-                sx={{
-                  color: "#414141",
-                  "&:hover": {
-                    backgroundColor: "#e9e5e5",
-                    color: "#1c2859",
-                  },
-                }}
+                className={styles.listItem}
               >
-                <ListItemIcon
-                  sx={{
-                    "&:hover": {
-                      backgroundColor: "transparent",
-                      color: "#1c2859",
-                    },
-                  }}
-                >
+                <ListItemIcon className={styles.listItemIcon}>
                   {item.icon}
                 </ListItemIcon>
                 <ListItemText primary={text} />

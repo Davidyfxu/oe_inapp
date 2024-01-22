@@ -11,22 +11,11 @@ import {
   ListItemText,
 } from "@mui/material";
 // menu
-import DrawerItem from "./DrawerItem.jsx";
+import DrawerItem from "../DrawerIterm/index.js";
 // rotas
 import { Link } from "react-router-dom";
+import styles from './index.module.scss';
 
-// personalizacao
-const StyledToolbar = styled(Toolbar)({
-  display: "flex",
-  justifyContent: "space-between",
-});
-
-const ListMenu = styled(List)(({ theme }) => ({
-  display: "none",
-  [theme.breakpoints.up("sm")]: {
-    display: "flex",
-  },
-}));
 
 //rotas
 const itemList = [
@@ -44,7 +33,7 @@ const itemList = [
   },
 ];
 
-const Navbar = () => {
+const Navbar: React.FC = () => {
   return (
     <AppBar
       component="nav"
@@ -54,14 +43,14 @@ const Navbar = () => {
       }}
       elevation={0}
     >
-      <StyledToolbar>
+      <Toolbar className={styles.styledToolbar}>
         <Typography variant="h6" component="h2">
           HBSales
         </Typography>
-        <Box sx={{ display: { xs: "block", sm: "none" } }}>
+        <Box className={styles.drawerItemBox}>
           <DrawerItem />
         </Box>
-        <ListMenu>
+        <List className={styles.listMenu}>
           {itemList.map((item) => {
             const { text } = item;
             return (
@@ -69,21 +58,15 @@ const Navbar = () => {
                 <ListItemButton
                   component={Link}
                   to={item.to}
-                  sx={{
-                    color: "#fff",
-                    "&:hover": {
-                      backgroundColor: "transparent",
-                      color: "#1e2a5a",
-                    },
-                  }}
+                  className={styles.listItemButton}
                 >
                   <ListItemText primary={text} />
                 </ListItemButton>
               </ListItem>
             );
           })}
-        </ListMenu>
-      </StyledToolbar>
+        </List>
+      </Toolbar>
     </AppBar>
   );
 };

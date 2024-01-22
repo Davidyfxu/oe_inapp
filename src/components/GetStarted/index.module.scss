@@ -1,0 +1,26 @@
+.getStartedContainer {
+  padding: 1rem;
+}
+
+.customGridItem {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.customTypography {
+  font-size: 1.1rem;
+  text-align: start;
+  line-height: 1.5;
+  color: #515151;
+  margin-top: 1.5rem;
+}
+
+.articleBox {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.fullWidthImage {
+  width: 100%;
+}

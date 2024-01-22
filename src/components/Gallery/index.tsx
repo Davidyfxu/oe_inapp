@@ -5,11 +5,12 @@ import { Typography, Box, Stack } from "@mui/material";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
 // components
-import Title from "./Title.jsx";
-import Paragraph from "./Paragraph.jsx";
+import Title from "../Title/index";
+import Paragraph from "../Paragraph/index";
+import styles from './index.module.scss';
 
-const Gallery = () => {
-  const [currentIndex, setCurrentIndex] = useState();
+const Gallery: React.FC = () => {
+  const [currentIndex, setCurrentIndex] = useState<number>();
 
   const imageData = [
     {
@@ -40,7 +41,7 @@ const Gallery = () => {
     </div>
   ));
 
-  const handleChange = (index) => {
+  const handleChange = (index: number) => {
     setCurrentIndex(index);
   };
 
@@ -49,26 +50,18 @@ const Gallery = () => {
       direction="column"
       justifyContent="center"
       alignItems="center"
-      sx={{
-        py: 8,
-        px: 2,
-        display: { xs: "flex" },
-      }}
+      className={styles.container}
     >
       <Box
         component="section"
-        sx={{
-          paddingBottom: 3,
-        }}
+        className={styles.section}
       >
         <Title text={"Plans and dimension"} textAlign={"center"} />
         <Typography
           variant="h5"
           component="h4"
           align="center"
-          sx={{
-            paddingTop: 1,
-          }}
+          className={styles.titleSpacing}
         >
           Rooms Gallery
         </Typography>

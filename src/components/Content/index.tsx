@@ -8,22 +8,16 @@ import FastfoodOutlinedIcon from "@mui/icons-material/FastfoodOutlined";
 import PoolOutlinedIcon from "@mui/icons-material/PoolOutlined";
 import WifiPasswordIcon from "@mui/icons-material/WifiPassword";
 // components
-import Title from "./Title.jsx";
-import Paragraph from "./Paragraph.jsx";
+import Title from "../Title/index";
+import Paragraph from "../Paragraph/index";
+import styles from './index.module.scss';
 
-const Content = () => {
+const Content: React.FC = () => {
   return (
     <Grid
       container
       spacing={0}
-      sx={{
-        display: "flex",
-        flexDirection: "row",
-        justifyContent: "center",
-        alignItems: "center",
-        py: 10,
-        px: 2,
-      }}
+      className={styles.contentContainer}
     >
       <Grid item xs={12} sm={12} md={5} component="section">
         <Title text={"What we are offering?"} textAlign={"start"} />
@@ -31,10 +25,7 @@ const Content = () => {
         <Typography
           variant="h6"
           component="h4"
-          sx={{
-            fontWeight: "400",
-            paddingTop: 1,
-          }}
+          className={styles.typographyH6}
         >
           Property facilities
         </Typography>
@@ -54,15 +45,7 @@ const Content = () => {
       <Grid item xs={12} sm={6} md={3}>
         <Card
           square={true}
-          sx={{
-            minHeight: 200,
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
-            alignItems: "center",
-            textAlign: "center",
-            border: "1px solid #ccc",
-          }}
+          className={styles.borderCard}
         >
           <CardContent>
             <IconButton>
@@ -71,10 +54,7 @@ const Content = () => {
             <Typography
               variant="h5"
               component="p"
-              sx={{
-                fontWeight: 700,
-                textTransform: "capitalize",
-              }}
+              className={styles.typographyH5}
             >
               gym
             </Typography>
@@ -85,15 +65,7 @@ const Content = () => {
       <Grid item xs={12} sm={6} md={3}>
         <Card
           square={true}
-          sx={{
-            minHeight: 200,
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
-            alignItems: "center",
-            textAlign: "center",
-            border: "1px solid #ccc",
-          }}
+          className={styles.borderCard}
         >
           <CardContent>
             <IconButton>
@@ -102,10 +74,7 @@ const Content = () => {
             <Typography
               variant="h5"
               component="p"
-              sx={{
-                fontWeight: 700,
-                textTransform: "capitalize",
-              }}
+              className={styles.typographyH5}
             >
               parking
             </Typography>
@@ -118,21 +87,11 @@ const Content = () => {
         xs={12}
         sm={6}
         md={2}
-        sx={{
-          display: { xs: "none", sm: "block" },
-        }}
+        className={styles.cardArrow}
       >
         <Card
           square={true}
-          sx={{
-            boxShadow: "none",
-            minHeight: 180,
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
-            alignItems: "center",
-            textAlign: "center",
-          }}
+          className={styles.shadowlessCard}
         >
           <CardContent>
             <ArrowCircleRightRoundedIcon fontSize="large" color="secondary" />
@@ -143,15 +102,7 @@ const Content = () => {
       <Grid item xs={12} sm={6} md={3}>
         <Card
           square={true}
-          sx={{
-            minHeight: 200,
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
-            alignItems: "center",
-            textAlign: "center",
-            border: "1px solid #ccc",
-          }}
+          className={styles.borderCard}
         >
           <CardContent>
             <IconButton>
@@ -160,10 +111,7 @@ const Content = () => {
             <Typography
               variant="h5"
               component="p"
-              sx={{
-                fontWeight: 700,
-                textTransform: "capitalize",
-              }}
+              className={styles.typographyH5}
             >
               local dining
             </Typography>
@@ -174,15 +122,7 @@ const Content = () => {
       <Grid item xs={12} sm={6} md={3}>
         <Card
           square={true}
-          sx={{
-            minHeight: 200,
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
-            alignItems: "center",
-            textAlign: "center",
-            border: "1px solid #ccc",
-          }}
+          className={styles.borderCard}
         >
           <CardContent>
             <IconButton>
@@ -191,10 +131,7 @@ const Content = () => {
             <Typography
               variant="h5"
               component="p"
-              sx={{
-                fontWeight: 700,
-                textTransform: "capitalize",
-              }}
+              className={styles.typographyH5}
             >
               swimming pool
             </Typography>
@@ -205,15 +142,7 @@ const Content = () => {
       <Grid item xs={12} sm={6} md={3}>
         <Card
           square={true}
-          sx={{
-            minHeight: 200,
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
-            alignItems: "center",
-            textAlign: "center",
-            border: "1px solid #ccc",
-          }}
+          className={styles.borderCard}
         >
           <CardContent>
             <IconButton>
@@ -222,10 +151,7 @@ const Content = () => {
             <Typography
               variant="h5"
               component="p"
-              sx={{
-                fontWeight: 700,
-                textTransform: "capitalize",
-              }}
+              className={styles.typographyH5}
             >
               Internet
             </Typography>
