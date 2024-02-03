@@ -1,10 +1,7 @@
 import React from "react";
-import { Box, Grid, styled, Typography } from "@mui/material";
+import { Box, Grid, Typography } from "@mui/material";
 import Title from "../Title/index";
 import styles from "./index.module.scss";
-// img
-import imgDetail from "../../assets/mogu_MAY.PNG";
-import imgDetail2 from "../../assets/mogu_JUN.png";
 
 const GetStarted: React.FC = () => {
   return (
@@ -29,7 +26,11 @@ const GetStarted: React.FC = () => {
         </Box>
       </Grid>
       <Grid item xs={12} sm={4} md={6}>
-        <img src={imgDetail} alt="" className={styles.fullWidthImage} />
+        <img
+          src={"src/assets/mogu_MAY.PNG"}
+          alt=""
+          className={styles.fullWidthImage}
+        />
       </Grid>
       <Grid
         item
@@ -40,7 +41,11 @@ const GetStarted: React.FC = () => {
           order: { xs: 4, sm: 4, md: 3 },
         }}
       >
-        <img src={imgDetail2} alt="" className={styles.fullWidthImage} />
+        <img
+          src={"src/assets/mogu_JUN.png"}
+          alt=""
+          className={styles.fullWidthImage}
+        />
       </Grid>
 
       <Grid
