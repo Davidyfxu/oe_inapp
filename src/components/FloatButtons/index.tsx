@@ -1,7 +1,7 @@
 import React from "react";
 import { FloatButton, Image, Popover } from "antd";
 import { WechatOutlined, WeiboOutlined } from "@ant-design/icons";
-
+import xhs from "../../assets/xhs.svg";
 const FloatButtons = () => {
   return (
     <>
@@ -57,7 +57,7 @@ const FloatButtons = () => {
         trigger="click"
       >
         <FloatButton
-          icon={<img width={18} src={"src/assets/xhs.svg"} alt="" />}
+          icon={<img width={18} src={xhs} alt="小红书" />}
           type="default"
           style={{
             right: 96,
