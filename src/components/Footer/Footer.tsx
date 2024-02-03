@@ -5,15 +5,11 @@ import FooterTitle from "./FooterTitle";
 import FooterLink from "./FooterLink";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
-import styles from "./index.module.scss"; 
+import styles from "./index.module.scss";
 
 const Footer = () => {
-
   return (
-    <Box
-      component="footer"
-      className={`${styles.boxRow} ${styles.padding}`}
-    >
+    <Box component="footer" className={`${styles.boxRow} ${styles.padding}`}>
       <Stack className={styles.stackColumn}>
         <FooterTitle text={"address"} />
         <FooterLink text={"15th Louis St, london 92382, eng"} />
@@ -43,23 +39,15 @@ const Footer = () => {
           maxWidth="100%"
           justifyContent="space-between"
         >
-          <Link
-            href="#"
-            variant="body2"
-            className={styles.iconLink}
-          >
+          <Link href="#" variant="body2" className={styles.iconLink}>
             <InstagramIcon />
           </Link>
-          <Link
-            href="#"
-            variant="body2"
-            className={styles.iconLink}
-          >
+          <Link href="#" variant="body2" className={styles.iconLink}>
             <FacebookIcon />
           </Link>
         </Stack>
         <Typography variant="caption" component="p">
-          &copy; 2022 HBSales Inc.
+          &copy; {new Date().getFullYear()} Offer Expert Inc.
         </Typography>
       </Stack>
     </Box>

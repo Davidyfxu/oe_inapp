@@ -2,7 +2,7 @@ import React from "react";
 import { Box, Button, FormControl, Stack, TextField } from "@mui/material";
 import Title from "../Title/index";
 import Paragraph from "../Paragraph/index";
-import styles from './index.module.scss';
+import styles from "./index.module.scss";
 import { ClassNames } from "@emotion/react";
 
 const Details: React.FC = () => {
@@ -29,11 +29,18 @@ const Details: React.FC = () => {
       alignItems="center"
       className={styles.container}
     >
-      <Title text={"Interesting to buy property"} textAlign={"center"} />
+      <Title text={"NTU NUS硕博学长学姐留学帮帮你"} textAlign={"center"} />
       <Paragraph
         text={
-          "If you are interested to buy the property contact us we will call you. \
-                Shortly to fulfill you requirements and property."
+          "🌟团队目前共拥有100+硕博申请导师，覆盖计算机、金融、电子信息、生化环材、商业分析等40+学科，旨在为大家匹配背景最相符的导师。其中，包含5+副教授，20+来自哈佛、MIT、NTU、NUS的博后，30+来自剑桥、IC、NTU、NUS、港中科的博士，40+来全球top20的硕士，还有计算机、人工智能等热门专业在读硕士，为你的留学之路保驾护航~"
+        }
+        maxWidth={"sm"}
+        mx={0}
+        textAlign={"center"}
+      />
+      <Paragraph
+        text={
+          "🌟欢迎大家私信菜菜，进行咨询或投稿（唠嗑，提问和offer分享都ok），也欢迎加入我们的留学资讯分享群。💫菜菜会第一时间回复大家的。"
         }
         maxWidth={"sm"}
         mx={0}
@@ -70,13 +77,7 @@ const Details: React.FC = () => {
             autoComplete="current-phone"
           />
         </FormControl>
-        <Button
-          variant="contained"
-          fullWidth
-          type="submit"
-          size="medium"
-          className={styles.button}
-        >
+        <Button variant="contained" fullWidth size="medium" type="submit">
           send
         </Button>
       </Box>

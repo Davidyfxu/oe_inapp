@@ -1,9 +1,10 @@
 .customBox {
-  min-height: 80vh;
+  //min-height: 80vh;
   display: flex;
   justify-content: center;
   gap: 1rem;
-  padding-top: 5rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
   background-color: #409eff;
 
   @media (max-width: 960px) {
@@ -16,7 +17,7 @@
 
 .boxText {
   flex: 1;
-  padding-left: 4rem; /* 替换为 theme.spacing(8) 的实际值 */
+  padding-left: 2rem; /* 替换为 theme.spacing(8) 的实际值 */
 
   @media (max-width: 899.95px) {
     /* md 断点的宽度 */
@@ -80,19 +81,11 @@
 }
 
 .imgBox {
-  @media (max-width: 960px) {
-    flex: 1;
-    padding-top: 30px;
-    align-self: center;
-  }
-
-  @media (min-width: 960px) {
-    flex: 2;
-    align-self: flex-end;
-  }
+  flex: 1;
+  display: flex;
+  justify-content: center;
 }
 
 .fullWidthImage {
-  width: 100%;
-  margin-bottom: -15px;
+  max-width: 400px;
 }

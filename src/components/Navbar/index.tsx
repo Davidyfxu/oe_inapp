@@ -6,16 +6,17 @@ import {
   List,
   ListItem,
   Typography,
-  styled,
   ListItemButton,
   ListItemText,
+  ButtonGroup,
+  IconButton,
 } from "@mui/material";
 // menu
 import DrawerItem from "../DrawerIterm/index.js";
 // rotas
 import { Link } from "react-router-dom";
-import styles from './index.module.scss';
-
+import styles from "./index.module.scss";
+import { WechatOutlined, WeiboOutlined } from "@ant-design/icons";
 
 //rotas
 const itemList = [
@@ -45,7 +46,7 @@ const Navbar: React.FC = () => {
     >
       <Toolbar className={styles.styledToolbar}>
         <Typography variant="h6" component="h2">
-          HBSales
+          新港英申请菜博士
         </Typography>
         <Box className={styles.drawerItemBox}>
           <DrawerItem />

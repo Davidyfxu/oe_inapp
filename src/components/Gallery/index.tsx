@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 // mui
-import { Typography, Box, Stack } from "@mui/material";
+import { Box, Stack } from "@mui/material";
 // carousel
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
 // components
 import Title from "../Title/index";
 import Paragraph from "../Paragraph/index";
-import styles from './index.module.scss';
+import styles from "./index.module.scss";
 
 const Gallery: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState<number>();
@@ -15,29 +15,29 @@ const Gallery: React.FC = () => {
   const imageData = [
     {
       alt: "image1",
-      url: "https://images.pexels.com/photos/259751/pexels-photo-259751.jpeg?cs=srgb&dl=pexels-pixabay-259751.jpg&fm=jpg",
+      url: "https://oss.laf.dev/cpvg7c-offer-expert-inapp/gallery_1.png",
     },
     {
       alt: "image2",
-      url: "https://images.pexels.com/photos/5411784/pexels-photo-5411784.jpeg?cs=srgb&dl=pexels-andrea-davis-5411784.jpg&fm=jpg",
+      url: "https://oss.laf.dev/cpvg7c-offer-expert-inapp/gallery_2.png",
     },
     {
       alt: "image3",
-      url: "https://images.pexels.com/photos/356809/pexels-photo-356809.jpeg?cs=srgb&dl=pexels-daniel-frank-356809.jpg&fm=jpg",
+      url: "https://oss.laf.dev/cpvg7c-offer-expert-inapp/gallery_3.png",
     },
     {
       alt: "image4",
-      url: "https://images.pexels.com/photos/6267516/pexels-photo-6267516.jpeg?cs=srgb&dl=pexels-get-lost-mike-6267516.jpg&fm=jpg",
+      url: "https://oss.laf.dev/cpvg7c-offer-expert-inapp/gallery_4.png",
     },
     {
       alt: "image5",
-      url: "https://images.pexels.com/photos/667838/pexels-photo-667838.jpeg?cs=srgb&dl=pexels-huseyn-kamaladdin-667838.jpg&fm=jpg",
+      url: "https://oss.laf.dev/cpvg7c-offer-expert-inapp/gallery_5.png",
     },
   ];
 
   const renderSlides = imageData.map((image) => (
     <div key={image.alt}>
-      <img src={image.url} alt={image.alt} />
+      <img width={400} src={image.url} alt={image.alt} />
     </div>
   ));
 
@@ -52,26 +52,10 @@ const Gallery: React.FC = () => {
       alignItems="center"
       className={styles.container}
     >
-      <Box
-        component="section"
-        className={styles.section}
-      >
-        <Title text={"Plans and dimension"} textAlign={"center"} />
-        <Typography
-          variant="h5"
-          component="h4"
-          align="center"
-          className={styles.titleSpacing}
-        >
-          Rooms Gallery
-        </Typography>
+      <Box component="section" className={styles.section}>
+        <Title text={"海外留学生活纪念墙"} textAlign={"center"} />
         <Paragraph
-          text={
-            "We have more 5000 reviews and our\
-                    customers trust on our quality product\
-                    and trust own our product. If you interested,\
-                    contact us."
-          }
+          text={"搜集了来自全球各个地区和高校的风景照、纪念照等等"}
           maxWidth={"sm"}
           mx={"auto"}
           textAlign={"center"}
