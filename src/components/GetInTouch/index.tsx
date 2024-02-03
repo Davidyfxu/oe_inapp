@@ -14,11 +14,9 @@ const GetInTouch: React.FC = () => {
       alignItems="center"
       className={styles.getInTouchContainer}
     >
-      <Title text={"Contact us to buy property"} textAlign={"center"} />
+      <Title text={"欢迎联系我们"} textAlign={"center"} />
       <Paragraph
-        text={
-          "It is our commitment to ensure a professional and enjoyable new home buying experience for you. If you want to get a home to start living as a family in an area that you love click the button below."
-        }
+        text={"有任何不懂的问题，欢迎微博、小红书、微信等途径联系我们。"}
         maxWidth={"600px"}
         mx={0}
         textAlign={"center"}
