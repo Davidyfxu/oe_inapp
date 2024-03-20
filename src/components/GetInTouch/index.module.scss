@@ -3,18 +3,8 @@
   padding-bottom: 2rem;
   margin-left: 3rem;
   margin-right: 3rem;
-}
-
-.getInTouchButton {
-  font-size: 0.9rem;
-  text-transform: capitalize !important;
-  padding: 1rem 2rem;
-  margin-top: 1.5rem;
-  margin-bottom: 1rem;
-  border-radius: 0;
-  background-color: #14192d !important;
-
-  &:hover {
-    background-color: #1e2a5a;
-  }
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }

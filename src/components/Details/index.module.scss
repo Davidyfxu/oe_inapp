@@ -1,9 +1,7 @@
 .container {
-  padding: 2rem;
-}
-
-.form {
-  margin-top: 0.5rem;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  padding: 2rem 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }

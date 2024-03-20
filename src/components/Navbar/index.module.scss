@@ -1,34 +1,19 @@
-.styledToolbar {
-    display: flex;
-    justify-content: space-between;
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  width: 100%;
+  padding: 8px 16px 0;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+
+  .title {
+    width: 200px;
+    margin-bottom: 0;
   }
-  
-.listMenu {
-    display: none;
-  
-    @media (min-width: 600px) { 
-      display: flex;
-    }
+
+  .menu {
+    width: 60%;
   }
-  
-.drawerItemBox {
-    display: block;
-  
-    @media (min-width: 600px) {
-      display: none;
-    }
-  }
-  
-.listItemButton {
-    color: #fff;
-  
-    &:hover {
-      background-color: transparent;
-      color: #1e2a5a;
-    }
-  }
-  
-.appBar {
-    background-color: #409eff;
-  }
-  
+}

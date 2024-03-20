@@ -1,49 +1,11 @@
 .contentContainer {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding-top: 5rem; 
-    padding-bottom: 5rem; 
-    padding-left: 1rem; 
-    padding-right: 1rem;
-  }
-  
-.commonCard {
-    display: flex;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 1rem;
+  @media (max-width: 600px) {
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+    flex-wrap: wrap;
   }
-  
-.borderCard {
-    @extend .commonCard;
-    min-height: 200px;
-    border: 1px solid #ccc;
-  }
-  
-.shadowlessCard {
-    @extend .commonCard;
-    min-height: 180px;
-    box-shadow: none;
-  }
-  
-.cardArrow {
-    box-shadow: none;
-    
-    @media (max-width: 600px) {
-      display: block;
-    }
-  }
-  
-.typographyH6 {
-    font-weight: 400;
-    padding-top: 0.5rem; 
-  }
-  
-.typographyH5 {
-    font-weight: 700 !important;
-    text-transform: capitalize !important;
-  }
-  
+}
