@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import styles from "./index.module.scss";
 //img
 import headerImg from "../../assets/offer_expert_logo.png";
-import { Typography, Button } from "antd";
+import { Typography, Button, Image } from "antd";
 
 const Header: React.FC = () => {
   const navigate = useNavigate();
@@ -29,11 +29,7 @@ const Header: React.FC = () => {
         </div>
       </div>
       <div className={styles.imgBox}>
-        <img
-          src={headerImg}
-          alt="headerImg"
-          className={styles.fullWidthImage}
-        />
+        <Image src={headerImg} alt="headerImg" />
       </div>
     </div>
   );
