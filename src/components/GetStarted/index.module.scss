@@ -1,24 +1,22 @@
 .getStartedContainer {
-  padding: 1rem;
-}
-
-.customGridItem {
+  padding: 2rem 3rem;
   display: flex;
-  flex-direction: column;
-  justify-content: start;
-}
+  flex-wrap: wrap;
+  justify-content: space-between;
 
-.customTypography {
-  font-size: 1.1rem;
-  text-align: start;
-  line-height: 1.5;
-  color: #515151;
-  margin-top: 1.5rem;
-}
+  .card {
+    flex: 1 1 300px; /* Flex-grow, flex-shrink, and base width for medium screens */
+    min-width: 300px; /* Minimum width for the card on medium screens */
+    margin: 10px;
+  }
 
-.articleBox {
-  padding-left: 1rem;
-  padding-right: 1rem;
+  /* Media query for screens less than or equal to 600px (considered small screens) */
+  @media (max-width: 600px) {
+    .card {
+      min-width: 100%; /* Full width on small screens */
+      margin: 5px 0; /* Adjust margin for vertical spacing on small screens */
+    }
+  }
 }
 
 .fullWidthImage {
