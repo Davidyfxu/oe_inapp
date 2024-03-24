@@ -23,7 +23,7 @@ const Header: React.FC = () => {
           <Button type="primary" onClick={() => navigate("/contact")}>
             留学咨询
           </Button>
-          <Button type="text" onClick={() => navigate("/about")}>
+          <Button ghost onClick={() => navigate("/about")}>
             探索更多
           </Button>
         </div>

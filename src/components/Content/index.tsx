@@ -4,11 +4,11 @@ const { Title, Paragraph } = Typography;
 
 import styles from "./index.module.scss";
 
-const items = ["硕士生活", "文书指导", "", "留学日常", "出海求职", "全球见闻"];
+const items = ["硕士生活", "文书指导", "留学日常", "出海求职", "全球见闻"];
 const Content: React.FC = () => {
   return (
     <div className={styles.contentContainer}>
-      <div>
+      <div style={{ maxWidth: 680 }}>
         <Title>我们为你提供</Title>
         <Title level={4}>专业的留学服务</Title>
         <Paragraph>

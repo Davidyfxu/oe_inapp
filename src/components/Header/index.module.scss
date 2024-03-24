@@ -3,8 +3,7 @@
   display: flex;
   justify-content: center;
   gap: 1rem;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
+  padding: 1rem;
   background-color: #409eff;
 
   @media (max-width: 960px) {
@@ -42,41 +41,10 @@
 
 .buttons_container {
   display: flex;
+  gap: 1rem;
   @media (max-width: 960px) {
     /* md 断点的宽度 */
     justify-content: center;
-  }
-
-  .buttonBuyNow {
-    margin-right: 1rem; /* 替换为 theme.spacing(1) 的实际值 */
-    padding: 0.5rem 2rem; /* 替换为 theme.spacing(1, 4) 的实际值 */
-    font-size: 0.9rem;
-    text-transform: capitalize !important;
-    border-radius: 0;
-    border-color: #14192d;
-    color: #fff;
-    background-color: #14192d !important;
-
-    &:hover,
-    &:focus {
-      background-color: #343a55;
-    }
-  }
-
-  .buttonExplore {
-    padding: 0.5rem 2rem; /* 替换为 theme.spacing(1, 4) 的实际值 */
-    font-size: 0.9rem;
-    text-transform: capitalize !important;
-    border-radius: 0;
-    color: #fff;
-    background-color: transparent !important;
-    border-color: #fff;
-
-    &:hover,
-    &:focus {
-      color: #343a55;
-      border-color: #343a55;
-    }
   }
 }
 

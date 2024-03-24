@@ -2,9 +2,8 @@ import React from "react";
 import { Button, Form, type FormProps, Input, Typography } from "antd";
 
 type FieldType = {
-  username?: string;
-  password?: string;
-  remember?: string;
+  email?: string;
+  phone?: string;
 };
 import styles from "./index.module.scss";
 const { Title, Paragraph } = Typography;
@@ -36,17 +35,19 @@ const Details: React.FC = () => {
         style={{ width: "100%" }}
       >
         <Form.Item<FieldType>
-          name="username"
-          rules={[{ required: true, message: "Please input your username!" }]}
+          name="email"
+          rules={[{ required: true, message: "Please input your email!" }]}
         >
-          <Input placeholder="input placeholder" />
+          <Input placeholder="Please input your email" />
         </Form.Item>
 
         <Form.Item<FieldType>
-          name="password"
-          rules={[{ required: true, message: "Please input your password!" }]}
+          name="phone"
+          rules={[
+            { required: true, message: "Please input your phone number!" },
+          ]}
         >
-          <Input placeholder="input placeholder" />
+          <Input placeholder="Please input your phone number" />
         </Form.Item>
 
         <Form.Item>

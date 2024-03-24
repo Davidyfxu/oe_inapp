@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Menu, Typography, theme } from "antd";
 import {
@@ -34,6 +34,10 @@ const Navbar: React.FC = () => {
     setCurrent(e.key);
     navigate(e.key);
   };
+
+  useEffect(() => {
+    setCurrent(window.location.pathname);
+  }, [window.location.pathname]);
 
   return (
     <div
