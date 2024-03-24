@@ -28,7 +28,7 @@ const Gallery: React.FC = () => {
   ];
 
   const renderSlides = imageData.map((image) => (
-    <Image width={400} src={image.url} alt={image.alt}></Image>
+    <Image src={image.url} alt={image.alt} />
   ));
 
   return (
@@ -37,9 +37,9 @@ const Gallery: React.FC = () => {
         <Title>海外留学生活纪念墙</Title>
         <Paragraph>搜集了来自全球各个地区和高校的风景照、纪念照等等</Paragraph>
       </div>
-      <Carousel className={styles.carousel} autoplay>
-        {renderSlides}
-      </Carousel>
+      <div className={styles.carousel}>
+        <Carousel autoplay>{renderSlides}</Carousel>
+      </div>
     </div>
   );
 };
