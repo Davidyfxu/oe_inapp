@@ -12,7 +12,7 @@ const FloatButtons = () => {
           <Image
             width={200}
             src={
-              "https://oss.laf.dev/cpvg7c-offer-expert-inapp/qr_code_weibo.jpg"
+              "https://objectstorageapi.gzg.sealos.run/a3ve0keh-sealaf-oevtp9dizy-backend/website/weibo.jpg"
             }
             alt=""
           />
@@ -31,7 +31,7 @@ const FloatButtons = () => {
           <Image
             width={200}
             src={
-              "https://oss.laf.dev/cpvg7c-offer-expert-inapp/qr_code_xhs.jpg"
+              "https://objectstorageapi.gzg.sealos.run/a3ve0keh-sealaf-oevtp9dizy-backend/website/wechat.jpg"
             }
             alt=""
           />
@@ -50,7 +50,7 @@ const FloatButtons = () => {
           <Image
             width={200}
             src={
-              "https://oss.laf.dev/cpvg7c-offer-expert-inapp/qr_code_xhs.jpg"
+              "https://objectstorageapi.gzg.sealos.run/a3ve0keh-sealaf-oevtp9dizy-backend/website/xhs.jpg"
             }
             alt=""
           />
