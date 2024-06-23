@@ -1,10 +1,10 @@
 import React from "react";
 import MotionWrapper from "../../components/MotionWrapper";
-import LazyRouter from "../../components/LazyRouter";
-const Header = LazyRouter(() => import("../../components/Header"));
-const Strengths = LazyRouter(() => import("../../components/Strengths"));
-const GetInTouch = LazyRouter(() => import("../../components/GetInTouch"));
-const Contents = LazyRouter(() => import("../../components/Contents"));
+import Header from "../../components/Header";
+import Strengths from "../../components/Strengths";
+import Contents from "../../components/Contents";
+import GetInTouch from "../../components/GetInTouch";
+
 const Home = () => {
   const modules = [<Header />, <Strengths />, <Contents />, <GetInTouch />];
   return (

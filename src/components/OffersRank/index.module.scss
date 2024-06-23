@@ -19,7 +19,8 @@
 }
 @media (max-width: 600px) {
   .offers {
-    flex-direction: column;
+    flex-direction: column-reverse;
+    align-items: center;
   }
 }
 

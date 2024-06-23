@@ -39,7 +39,7 @@ const OfferCardMap = {
 };
 
 const OffersRank: React.FC = () => {
-  const imageData = useGlobalStore((state) => state.galleries);
+  const imageData = useGlobalStore((state) => state.offerImages);
   const offers = useGlobalStore((state) => state.offersData);
 
   const renderSlides = imageData.map((image, index) => (
