@@ -14,6 +14,7 @@ interface IGlobalStoreState {
     title: string;
     value: string;
   }>;
+  offerImages: Array<any>;
   setData: (props: unknown) => void;
 }
 export enum OffersDataEnum {
@@ -77,5 +78,6 @@ export const useGlobalStore = create<IGlobalStoreState>()((set) => ({
       value: "OfferExpert",
     },
   ],
+  offerImages: [],
   setData: (props) => set((state) => ({ ...state, ...props })),
 }));
