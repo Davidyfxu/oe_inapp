@@ -1,9 +1,8 @@
-.getStartedContainer {
+.container {
   padding: 2rem 3rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-
   .card {
     flex: 1 1 300px; /* Flex-grow, flex-shrink, and base width for medium screens */
     min-width: 300px; /* Minimum width for the card on medium screens */

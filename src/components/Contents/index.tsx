@@ -3,9 +3,9 @@ import { Card, Image } from "antd";
 import styles from "./index.module.scss";
 import imgDetail from "../../assets/mogu_MAY.jpg";
 import imgDetail2 from "../../assets/mogu_JUN.jpg";
-const GetStarted: React.FC = () => {
+const Contents: React.FC = () => {
   return (
-    <div className={styles.getStartedContainer}>
+    <div className={styles.container}>
       <Card
         hoverable
         className={styles.card}
@@ -34,4 +34,4 @@ const GetStarted: React.FC = () => {
   );
 };
 
-export default GetStarted;
+export default Contents;

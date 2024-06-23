@@ -12,7 +12,7 @@ const GetInTouch: React.FC = () => {
         有任何不懂的问题，欢迎微博、小红书、微信等途径联系我们。
       </Paragraph>
       <Link to={"/contact"}>
-        <Button type={"primary"}>get in touch</Button>
+        <Button type={"primary"}>Get in touch</Button>
       </Link>
     </div>
   );

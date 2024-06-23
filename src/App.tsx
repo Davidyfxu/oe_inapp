@@ -1,24 +1,34 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import ApplyAU from "./pages/ApplyAU";
-import Apply from "./pages/Apply";
-import Home from "./pages/Home";
-import About from "./pages/About";
-import Contact from "./pages/Contact";
 import Navbar from "./components/Navbar/index";
+import useSWR from "swr";
+import { fetcher } from "./utils";
+import { useGlobalStore } from "./store/useGlobalStore";
+import FloatButtons from "./components/FloatButtons";
+import LazyRouter from "./components/LazyRouter";
+
+const Home = LazyRouter(() => import("./pages/Home"));
+const About = LazyRouter(() => import("./pages/About"));
+const Contact = LazyRouter(() => import("./pages/Contact"));
 const App = () => {
-  const isShowNav = !window.location.pathname.includes("apply");
+  const { data } = useSWR("/www/getAllData", fetcher);
+  const setData = useGlobalStore((state) => state.setData);
+
+  useEffect(() => {
+    if (data) {
+      setData(data?.data ?? {});
+    }
+  }, [data]);
+
   return (
     <BrowserRouter>
-      {isShowNav && <Navbar />}
+      <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/applyAU" element={<ApplyAU />} />
-        {/*<Route path="/apply" element={<Apply />} />*/}
-        {/*<Route path="*" element={<Error />} />*/}
       </Routes>
+      <FloatButtons />
     </BrowserRouter>
   );
 };

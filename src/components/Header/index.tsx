@@ -9,16 +9,21 @@ const Header: React.FC = () => {
   const navigate = useNavigate();
   return (
     <div className={styles.customBox}>
-      {/*  Box text  */}
       <div className={styles.boxText}>
-        <Typography.Title level={1}>
-          Offer Expert <br />
-          做你的留学百科全书
+        <Typography.Title style={{ color: "white" }} level={1}>
+          菜博士留学
         </Typography.Title>
-        <Typography.Paragraph>
-          在过去的三年中，我们以百分之百成功率，为众多小伙伴拿下理想的offer。其中不乏新港英offer大满贯硕士申请者，ntu、nus等博士申请者。
-          为大家提供【新加坡、香港、英国】等地区的【博士和硕士】申请服务，同时提供最新的【留学申请资讯和干货分享】。
-        </Typography.Paragraph>
+        <div style={{ color: "white", fontSize: "1.5rem" }}>
+          立足新加坡 服务全世界
+        </div>
+
+        <div style={{ color: "white" }}>
+          菜博士留学（OfferExpert）工作室于2019年创立，是一家诞生于新加坡的留学申请指导平台，三位创始人均为海外博士，分别毕业于南洋理工大学（NTU）和丹麦奥胡斯大学。
+          <br />
+          真诚才是必杀技！我们希望做一群有温度的学长学姐，分享亲身留学申请经验，打破信息差，让你少走弯路！成立至今，菜博士留学工作室已助力学生成功获得1355枚Offer，其中硕士申请成功率达到100%，博士申请成功率为93%，累计斩获奖学金超过8000万人民币。
+          <br />
+          我们相信，专业的人才能做好的事。团队拥有200多位来自世界顶级名校的硕士博士教授，组成了辅导导师天团，涵盖了基本所有学科领域：理工、商科、经济、社科、人文、艺术、音乐美术等50+个专业领域。我们致力于打造一个互助共赢的留学生互助平台，为学生提供从留学生活到学习求职的全方位陪伴与指导，让每位师弟师妹都能在异国他乡找到归属感和支持！
+        </div>
         <div className={styles.buttons_container}>
           <Button type="primary" onClick={() => navigate("/contact")}>
             留学咨询

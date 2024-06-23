@@ -1,16 +1,19 @@
 import React from "react";
-import GetInTouch from "../../components/GetInTouch";
-import GetStarted from "../../components/GetStarted";
-import Header from "../../components/Header";
-import FloatButtons from "../../components/FloatButtons";
-
+import MotionWrapper from "../../components/MotionWrapper";
+import LazyRouter from "../../components/LazyRouter";
+const Header = LazyRouter(() => import("../../components/Header"));
+const Strengths = LazyRouter(() => import("../../components/Strengths"));
+const GetInTouch = LazyRouter(() => import("../../components/GetInTouch"));
+const Contents = LazyRouter(() => import("../../components/Contents"));
 const Home = () => {
+  const modules = [<Header />, <Strengths />, <Contents />, <GetInTouch />];
   return (
     <>
-      <Header />
-      <GetStarted />
-      <GetInTouch />
-      <FloatButtons />
+      {modules.map((module, index) => (
+        <MotionWrapper duration={index + 0.5} key={index}>
+          {module}
+        </MotionWrapper>
+      ))}
     </>
   );
 };
