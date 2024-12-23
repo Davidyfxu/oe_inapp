@@ -1,36 +1,36 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Menu, Typography, theme } from "antd";
+import { Menu } from "antd";
 import {
-  ContactsOutlined,
-  ContainerOutlined,
   HomeOutlined,
+  TeamOutlined,
+  ContactsOutlined,
 } from "@ant-design/icons";
 import styles from "./index.module.scss";
-const { useToken } = theme;
+
 const itemList = [
   {
-    label: "Home",
+    label: "首页",
     key: "/",
     icon: <HomeOutlined />,
   },
   {
-    label: "About",
+    label: "关于我们",
     key: "/about",
-    icon: <ContainerOutlined />,
+    icon: <TeamOutlined />,
   },
   {
-    label: "Contact",
+    label: "联系咨询",
     key: "/contact",
     icon: <ContactsOutlined />,
   },
 ];
 
 const Navbar: React.FC = () => {
-  let { token } = useToken();
   const navigate = useNavigate();
   const [current, setCurrent] = useState(window.location.pathname);
-  const onClick = (e) => {
+
+  const onClick = (e: any) => {
     setCurrent(e.key);
     navigate(e.key);
   };
@@ -40,13 +40,10 @@ const Navbar: React.FC = () => {
   }, [window.location.pathname]);
 
   return (
-    <div
-      className={styles.navbar}
-      style={{ backgroundColor: token.colorBgBase }}
-    >
-      <Typography.Title level={5} className={styles.title}>
-        新港英申请菜博士
-      </Typography.Title>
+    <div className={styles.navbar}>
+      <h1 className={styles.title} onClick={() => navigate("/")}>
+        菜博士留学
+      </h1>
       <Menu
         className={styles.menu}
         onClick={onClick}

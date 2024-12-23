@@ -9,25 +9,29 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@ant-design/icons": "^5.2.6",
-    "antd": "^5.8.3",
-    "axios": "^1.4.0",
-    "dayjs": "^1.11.9",
-    "prettier": "^3.0.2",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-router-dom": "^6.18.0"
+    "@ant-design/icons": "^5.5.2",
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
+    "@mui/icons-material": "^6.2.1",
+    "@mui/material": "^6.2.1",
+    "antd": "^5.22.5",
+    "axios": "^1.7.9",
+    "dayjs": "^1.11.13",
+    "prettier": "^3.4.2",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.28.1"
   },
   "devDependencies": {
-    "@types/react": "^18.0.27",
-    "@types/react-dom": "^18.0.10",
+    "@types/react": "^18.3.18",
+    "@types/react-dom": "^18.3.5",
     "@vitejs/plugin-react": "^3.1.0",
-    "sass": "^1.69.7",
-    "typescript": "^4.9.3",
-    "vite": "^4.5.2",
-    "zustand": "^4.5.2",
+    "framer-motion": "^11.15.0",
+    "react-countup": "^6.5.3",
+    "sass": "^1.83.0",
     "swr": "^2.2.5",
-    "framer-motion": "^11.2.11",
-    "react-countup": "^6.5.3"
+    "typescript": "^4.9.5",
+    "vite": "^4.5.5",
+    "zustand": "^4.5.5"
   }
 }
